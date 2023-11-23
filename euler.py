@@ -97,3 +97,4 @@ plt.plot(x_real, y_real3)
 
 plt.grid(True)
 plt.show()
+plt.savefig('imagenes/euler.png')
