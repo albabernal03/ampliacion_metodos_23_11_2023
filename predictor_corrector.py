@@ -81,4 +81,4 @@ plt.plot(x_real, y_real)
 
 plt.grid(True)
 plt.show()
-plt.savefig('../imagenes/predictor_corrector.png')
+plt.savefig('imagenes/predictor_corrector.png')
