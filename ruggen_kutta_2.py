@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+
 def rugen_kutta(f, x, y, h, n):
     '''
     Función que implementa el método de Taylor para resolver una EDO
@@ -21,12 +22,12 @@ def f(x, y):
     '''
     return -2*x*y + ((2*x)/np.exp(x**2))
 
-
 def f_exacta(x):
     '''
     Función exacta 1
     '''
     return x**2/np.exp(x**2)
+
 
 def error(v, v_aprox):
     '''
@@ -43,8 +44,7 @@ x_final = 1.5
 # Datos iniciales (me da n 3 datos iniciales donde x siempre es igual, pero y varía)
 x = 0
 y0 = 0
-y1 = 1
-y2 = -1
+
 # Número de subintervalos que nos permite calcular el valor de h (paso)
 n = 10
 h = (x_final - x_inicial)/n
@@ -55,7 +55,6 @@ u, v = rugen_kutta(f, x, y0, h, n)
 # Obtenemos las soluciones exactas
 x_real = np.linspace(x_inicial, x_final, n)
 y_real = f_exacta(x_real)
-
 
 # Imprimimos la última y del bucle con 7 decimales 
 print('w_100: {:.7f}'.format(v[-1]))
@@ -74,7 +73,6 @@ plt.plot(u, v)
 
 # Dibujamos las soluciones exactas
 plt.plot(x_real, y_real)
-
 
 plt.grid(True)
 plt.show()
